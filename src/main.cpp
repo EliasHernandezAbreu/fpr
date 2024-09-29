@@ -1,5 +1,13 @@
+/**
+* @author Elías Hernández Abreu
+* @email alu0101487137@ull.edu.es
+* 
+* CC P1 - Primitive Recursive Functions
+*
+* @description Main file
+*/
+
 #include <cstdio>
-#include <iostream>
 #include <stdexcept>
 #include <string.h>
 #include <string>
@@ -21,6 +29,7 @@ int main(int argc, char** argv) {
              "  Numbers must be natural.\n"
              "OPTIONS:\n"
              "  -h -- Displays this help message.\n");
+        return 0;
     }
 
     PARAM_TYPE params(argc - 1);
@@ -38,9 +47,9 @@ int main(int argc, char** argv) {
         }
     }
 
-    std::cout << "Input params: ";
+    printf("Input params: ");
     print_params(params);
-    std::cout << '\n';
+    puts("");
 
     try {
         PRFSuccessor s;
@@ -63,7 +72,7 @@ int main(int argc, char** argv) {
 
         PARAM_TYPE result = pow.run(params);
 
-        std::cout << "\nResult: ";
+        printf("\nResults: ");
         print_params(result);
         printf("\nIn %d PRF calls.\n", PRFunction::getCallCounter());
 

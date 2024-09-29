@@ -1,10 +1,10 @@
 #include "PRComposition.hpp"
 
 PRComposition::PRComposition(const PRRunnable* one, const PRRunnable* two) {
-    first_ = one;
-    second_ = two;
+    top_ = one;
+    bottom_ = two;
 }
 
 PARAM_TYPE PRComposition::run(PARAM_TYPE param) const {
-    return first_->run(second_->run(param));
+    return top_->run(bottom_->run(param));
 }
